@@ -3,7 +3,7 @@
   "context": {
     "exam_id": "999002",
     "mi_ip": "138.100.13.64",
-    "repo_url": "TODO (Tarea 2)",
+    "repo_url": "https://github.com/odieste/ensayo-control-visitas.git",
     "db_host": "control-visitas-writer.cdciac06i0ta.us-east-1.rds.amazonaws.com",
     "db_name": "db_control_visitas",
     "secret_name": "control-visitas/db"

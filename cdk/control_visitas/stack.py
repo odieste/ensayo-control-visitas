@@ -24,7 +24,7 @@ class ControlVisitasStack(cdk.Stack):
         # Grupo de seguridad de la instancia. La salida está abierta (por defecto), así que la
         # instancia puede llegar a Aurora por el 5432.
         sg = ec2.SecurityGroup(self, "AppSg", vpc=vpc, description="Control visitas: HTTP y SSH")
-        # TODO (Tarea 2): permite la entrada HTTP (puerto 80) desde cualquier dirección IPv4.
+        sg.add_ingress_rule(ec2.Peer.any_ipv4(), ec2.Port.tcp(80), "HTTP")
 
         # SSH solo desde tu IP (la escribe params.sh en cdk.json)
         if mi_ip:
@@ -46,7 +46,7 @@ class ControlVisitasStack(cdk.Stack):
             f"docker build --build-arg GIT_COMMIT={commit} -t control-visitas /opt/control-visitas/app",
             " ".join([
                 "docker run -d --name contenedor-control-visitas --restart unless-stopped",
-                # TODO (Tarea 2): publica el puerto 80 de la instancia en el puerto del contenedor.
+                "-p 80:8080",
                 f"-e EXAM_ID={exam_id}",
                 f"-e DB_HOST={db_host}",
                 f"-e DB_NAME={db_name}",
