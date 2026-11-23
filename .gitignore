@@ -1,0 +1,16 @@
+# Clave SSH del laboratorio. No se sube.
+*.pem
+
+# Compilación local de la aplicación (si la pruebas con mvn package)
+app/target/
+
+# CDK: entorno virtual, plantillas generadas, salidas del despliegue y búsquedas de tu cuenta
+cdk/.venv/
+cdk/cdk.out/
+cdk/cdk-outputs.json
+cdk/cdk.context.json
+__pycache__/
+
+.DS_Store
+.vscode/
+*:Zone.Identifier

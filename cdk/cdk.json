@@ -1,0 +1,11 @@
+{
+  "app": "python app.py",
+  "context": {
+    "exam_id": "",
+    "mi_ip": "",
+    "repo_url": "TODO (Tarea 2)",
+    "db_host": "control-visitas-writer.cdciac06i0ta.us-east-1.rds.amazonaws.com",
+    "db_name": "db_control_visitas",
+    "secret_name": "control-visitas/db"
+  }
+}
